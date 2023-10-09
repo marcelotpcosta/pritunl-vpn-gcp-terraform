@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Terraform Pritunl VPN
 
 This repository contains Terraform code to deploy a [Pritunl VPN](https://pritunl.com/) server on Google Cloud Platform (GCP). Pritunl is an open-source VPN solution that provides a web-based management interface and supports various VPN protocols.
@@ -61,3 +62,7 @@ You can set the values of these variables in the `terraform.tfvars` file.
 ## Usage
 
 After the Terraform code is applied, the output will show the URL to access the Pritunl web interface, along with the username and password. You can use this URL to access the web interface and configure the VPN server.
+=======
+# pritunl-vpn-gcp-terraform
+pritunl-vpn-gcp-terraform
+>>>>>>> ff430d05717960e4d78b5fdbd5ca86b8d1cb2be6
