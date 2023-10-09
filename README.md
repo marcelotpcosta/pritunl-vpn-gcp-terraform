@@ -60,6 +60,5 @@ You can set the values of these variables in the `terraform.tfvars` file.
 
 ## Usage
 
-After the Terraform code is applied, the output will show the URL to access the Pritunl web interface, along with the username and password. You can use this URL to access the web interface and configure the VPN server.
+When resources are created sucessfully, the output will show the URL to access the Pritunl web interface, plus with the username and password. So access the web interface and configure the VPN server based on [Pritunl VPN](https://pritunl.com/) documentation
 =======
-# pritunl-vpn-gcp-terraform
