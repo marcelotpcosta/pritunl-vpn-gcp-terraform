@@ -14,7 +14,7 @@ variable "zone" {
 }
 
 variable "credentials_path" {
-  type = string
+  type        = string
   description = "Path to service account file"
 }
 
@@ -29,6 +29,6 @@ variable "ssh_pub_key_path" {
 } */
 
 variable "server_port" {
-  type = string
+  type        = string
   description = "Server port through which VPN clients will be connected"
 }
