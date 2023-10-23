@@ -12,7 +12,7 @@ module "vpc" {
 
 module "instance" {
   source           = "./modules/instances"
-  network_name     = module.vpc.network_name
-  ssh_user         = var.ssh_user
-  ssh_pub_key_path = var.ssh_pub_key_path
+  network_name     = module.vpc_network.network_name
+/*   ssh_user         = var.ssh_user
+  ssh_pub_key_path = var.ssh_pub_key_path */
 }

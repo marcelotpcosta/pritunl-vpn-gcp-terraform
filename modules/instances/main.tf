@@ -1,14 +1,15 @@
-resource "google_compute_instance" "Instance" {
-  name                    = "pritunl-server"
+resource "google_compute_instance" "vpn-server" {
+  name                    = "vpn-server"
   machine_type            = "e2-micro"
   can_ip_forward          = true
   metadata_startup_script = file("./startup_script.sh")
 
-  tags = ["pritunl-server", "http-server", "https-server"]
+  tags = ["vpn-server", "http", "https"]
 
   boot_disk {
     initialize_params {
-      image = "ubuntu-2004-focal-v20230104"
+      #image = "ubuntu-2004-focal-v20230104"
+      image = "ubuntu-os-cloud/ubuntu-2204-lts"
     }
   }
 
@@ -17,7 +18,7 @@ resource "google_compute_instance" "Instance" {
     access_config {}
   }
 
-  metadata = {
+/*   metadata = {
     ssh-keys = format("%s%s%s", var.ssh_user, ":", file(var.ssh_pub_key_path))
-  }
+  } */
 }

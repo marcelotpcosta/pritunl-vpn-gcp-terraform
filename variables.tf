@@ -18,7 +18,7 @@ variable "credentials_path" {
   description = "Path to service account file"
 }
 
-variable "ssh_user" {
+/* variable "ssh_user" {
   type        = string
   description = "Username for ssh key"
 }
@@ -26,7 +26,7 @@ variable "ssh_user" {
 variable "ssh_pub_key_path" {
   type = string
   description = "Path to public ssh key"
-}
+} */
 
 variable "server_port" {
   type = string
