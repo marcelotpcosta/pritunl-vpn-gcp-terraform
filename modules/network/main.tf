@@ -25,3 +25,15 @@ resource "google_compute_firewall" "general_rule" {
   target_tags   = ["vpn-server"]
   source_ranges = ["0.0.0.0/0"]
 }
+
+resource "google_compute_firewall" "iap-rule" {
+  name        = "iap-rule"
+  network     = google_compute_network.vpc_network.name
+  description = "Allow vpn admin and user ports"
+
+   allow {
+    protocol = "tcp"
+   }
+    target_tags   = ["vpn-server"]
+    source_ranges = ["35.235.240.0/20"]
+  }
