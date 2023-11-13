@@ -1,6 +1,6 @@
 # Introduction
 
-ThisREADME instrutcs to use code in that repo to deploy a Pritunl VPN server on the Google Cloud Platform (GCP) using Terraform. Also, we will leverage the Identity-Aware Proxy to provide secure SSH access to the VM instance, a final step to configure Pritunl VPN server.
+This README instrutcs to use code in that repo to deploy a Pritunl VPN server on the Google Cloud Platform (GCP) using Terraform. Also, we will leverage the Identity-Aware Proxy to provide secure SSH access to the VM instance, a final step to configure Pritunl VPN server.
 
 ## Client-site VPN
 
