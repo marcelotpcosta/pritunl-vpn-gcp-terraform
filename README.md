@@ -1,5 +1,7 @@
 # Introduction
 
+The following guide instrutcs you to use code in that repo to deploy a Pritunl VPN server on the Google Cloud Platform (GCP) using Terraform. Also, we will leverage the Identity-Aware Proxy to provide secure SSH access to the VM instance.
+
 ## Client-site VPN
 
 A client-site VPN establishes a secure and encrypted connection between a user and a private network, typically the organization's internal network. The use of a client-site Virtual Private Network (VPN) can be justified for several reasons: Enhanced Security, Remote Access, Protection on Public Networks, Data Privacy and Compliance, Securing Sensitive Transactions, Access Control, Reduced Cybersecurity Risks, etc.
@@ -16,13 +18,23 @@ Terraform is an Infrastructure as Code (IaC) tool that allows for the automated 
 
 The Google Cloud Platform (GCP) is a cloud computing services platform from Google, which includes storage, data processing, machine learning, analytics, and various other resources to facilitate the development, deployment, and scalability of applications. [Google Cloud Platform](https://cloud.google.com/gcp)
 
+### Identity-Aware Proxy
+
+With TCP forwarding, IAP can protect SSH and RDP access to your VMs hosted on Google Cloud. Your VM instances don't even need public IP addresses.
+
 ## Requirements
 
-* Terraform installed in your machine. Take a look here (https://developer.hashicorp.com/terraform/install)
-* A Google Cloud Platform project. All you need is a @gmail account and a credit card (Is totally charge safe, different other cloud cloud providers, you won’t be charged until you upgrade). [Try Google Cloud Platform for free](https://cloud.google.com/free)
-* A GCP service account key with the necessary permissions to create GCP resources. You can create a service account key from the GCP Console. https://cloud.google.com/iam/docs/service-accounts-create
+* Terraform. [See how to install Terraform](https://developer.hashicorp.com/terraform/install)
 
-## Pritunl VPN on GCP by Terraform
+* A Google Cloud Platform project. For that all you need is a @gmail account and a credit card (Is totally charge safe, different other cloud cloud providers, you won’t be charged until you upgrade/remove lock). You can use this link to claim $300 in free credits, [Try Google Cloud Platform for free](https://cloud.google.com/free). Also I recommend read [Creating and managing projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
+
+* A GCP service account key with the necessary permissions to create GCP resources. You can create a service account key from the GCP Console. [Create a GCP service account](https://cloud.google.com/iam/docs/service-accounts-create). **NOTE: Save the SA Json file outside the project directory to prevent accidental commits.**
+
+## Note:
+
+**The script that installs Pritunl is specific to an OS, in this case, Ubuntu 2204 LTS, so if you plan to use another image OS image, keep in mind to update the script to fit the OS you are using.**
+
+## Deploy a Pritunl VPN instance on GCP by Terraform
 
 The following Terraform code deploys a Pritunl VPN server on the Google Cloud Platform (GCP).
 
@@ -38,18 +50,30 @@ The following Terraform code deploys a Pritunl VPN server on the Google Cloud Pl
   cd terraform-pritunl-vpn
   ```
 
-3. Initialize the Terraform:
-  ```
-  terraform init
-  ```
+3. Variables: 
 
-4. Create a `terraform.tfvars` file on root dir and set the variables values:
+Create a `terraform.tfvars` file and set the variables values:
   ```
-  credentials_path = "<path-to-service-account-key>" // Save the file in a secure directory outside the project directory to prevent accidental commits
-  project_id       = "<your-gcp-project-id>" // Please read that: (https://cloud.google.com/resource-manager/docs/creating-managing-projects)
+  credentials_path = "<path-to-service-account-key>"
+  project_id       = "<your-gcp-project-id>"
   region           = "<gcp-region>"
   zone             = "<gcp-zone>"
-  server_port      = "<server-port>" // Suggestion 1194
+  server_port      = "<server-port>"
+  instance_type    = "<instance-type>"
+  ```
+
+Note that the `variables.tf` file contains the list of variables used .tfvars configuration file:
+
+- `credentials`: The path to your GCP service account key file. Should be Like "../../credentials/my-service-account.json"
+- `project_id`: Your GCP project ID.
+- `region`: The GCP region where the resources will be created.
+- `zone`: The GCP zone where the resources will be created.
+- `server_port`: Server port through which VPN clients will be connected.
+- `instance_type`: The intance size. See [Machine families resource and comparison guide](https://cloud.google.com/compute/docs/machine-resource)
+
+4. Initialize the Terraform:
+  ```
+  terraform init
   ```
 
 5. Apply the Terraform:
@@ -57,18 +81,8 @@ The following Terraform code deploys a Pritunl VPN server on the Google Cloud Pl
   terraform apply
   ```
 
-## Configuration
+6. Pritunl setup:
 
-The `variables.tf` file contains the list of variables used .tfvars configuration file:
-
-- `credentials`: The path to your GCP service account key file.
-- `project_id`: Your GCP project ID.
-- `region`: The GCP region where the resources will be created.
-- `zone`: The GCP zone where the resources will be created.
-- `server_port`: Server port through which VPN clients will be connected.
-
-You must set the values of these variables in the `terraform.tfvars` file.
-
-## 
+After resources creation, the output will show the public IP to access the Pritunl web interface, so access and follow the
 
 When resources are created sucessfully, the output will show the URL to access the Pritunl web interface, plus with the username and password. So access the web interface and configure the VPN server based on [Pritunl VPN](https://pritunl.com/) documentation.

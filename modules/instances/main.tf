@@ -1,6 +1,6 @@
 resource "google_compute_instance" "vpn-server" {
-  name                    = "vpn-server"
-  machine_type            = "e2-micro"
+  name                    = var.server_name
+  machine_type            = var.instance_type
   can_ip_forward          = true
   metadata_startup_script = file("./startup_script.sh")
 
@@ -8,7 +8,6 @@ resource "google_compute_instance" "vpn-server" {
 
   boot_disk {
     initialize_params {
-      #image = "ubuntu-2004-focal-v20230104"
       image = "ubuntu-os-cloud/ubuntu-2204-lts"
     }
   }
@@ -17,8 +16,4 @@ resource "google_compute_instance" "vpn-server" {
     network = var.network_name
     access_config {}
   }
-
-/*   metadata = {
-    ssh-keys = format("%s%s%s", var.ssh_user, ":", file(var.ssh_pub_key_path))
-  } */
 }

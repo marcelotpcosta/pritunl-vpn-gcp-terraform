@@ -1,7 +1,5 @@
 variable "network_name" {}
 
-#variable "server-name" {}
+variable "instance_type" {}
 
-#variable "ssh_user" {}
-
-#variable "ssh_pub_key_path" {}
+variable "server_name" {}

@@ -10,9 +10,14 @@ module "vpc_network" {
   server_port = var.server_port
 }
 
-module "vpn-server" {
-  source       = "./modules/instances"
-  network_name = module.vpc_network.network_name
-  /*   ssh_user         = var.ssh_user
-  ssh_pub_key_path = var.ssh_pub_key_path */
+module "vpn_server" {
+  source        = "./modules/instances"
+  server_name   = var.server_name
+  network_name  = module.vpc_network.network_name
+  instance_type = var.instance_type
+  
+}
+
+module "iap" {
+  source = "./modules/iam"
 }
