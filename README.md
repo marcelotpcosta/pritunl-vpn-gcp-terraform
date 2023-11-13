@@ -56,7 +56,7 @@ The following Terraform code deploys a Pritunl VPN server on the Google Cloud Pl
 - `project_id`: Your GCP project ID. See [Creating and managing projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
 - `region`: The GCP region where the resources will be created. See [GCP regions and zones](https://cloud.google.com/compute/docs/regions-zones)
 - `zone`: The GCP zone where the resources will be created. See [GCP regions and zones](https://cloud.google.com/compute/docs/regions-zones)
-- `server_port`: Server port through which VPN clients will be connected, for example the standard OpenVPN port "1194"
+- `server_port`: Server port which VPN clients will connect, for example the standard OpenVPN port "1194"
 - `instance_type`: The intance size. See [GCP machine types](https://cloud.google.com/compute/docs/machine-resource)
 - `server_name`: The server name on GCP console and OS hostname, for example "my-vpn-server"
 
