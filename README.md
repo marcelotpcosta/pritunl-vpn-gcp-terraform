@@ -50,18 +50,7 @@ The following Terraform code deploys a Pritunl VPN server on the Google Cloud Pl
   cd terraform-pritunl-vpn
   ```
 
-3. Variables: Rename the `terraform.tfvars.txt` to `terraform.tfvars`, fill the variables values and save it:
-  ```
-  credentials_path = "<path-to-service-account-key>"
-  project_id       = "<your-gcp-project-id>"
-  region           = "<gcp-region>"
-  zone             = "<gcp-zone>"
-  server_port      = "<server-port>"
-  instance_type    = "<instance-type>"
-  server_name      = "<server-name>"
-  ```
-
-4. Note that the `variables.tf` file contains the list of variables used by above .tfvars configuration file.
+3. Rename the `terraform.tfvars.txt` to `terraform.tfvars`, fill the variables values and save it. Note that the `variables.tf` file contains the list of variables used by tfvars configuration file.
 
 - `credentials`: The path to your GCP service account json key file;
 - `project_id`: Your GCP project ID;
