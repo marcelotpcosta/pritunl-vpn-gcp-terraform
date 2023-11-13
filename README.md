@@ -1,16 +1,18 @@
-# Client-site VPN
+# Introduction
+
+## Client-site VPN
 
 A client-site VPN establishes a secure and encrypted connection between a user and a private network, typically the organization's internal network. The use of a client-site Virtual Private Network (VPN) can be justified for several reasons: Enhanced Security, Remote Access, Protection on Public Networks, Data Privacy and Compliance, Securing Sensitive Transactions, Access Control, Reduced Cybersecurity Risks, etc.
 
-# O Pritunl VPN 
+## Pritunl VPN 
 
 The Pritunl VPN is an open-source solution that provides an intuitive and secure platform for the implementation of Virtual Private Networks (VPNs), emphasizing ease of use and administration. [Pritunl VPN](https://pritunl.com/)
 
-# Terraform
+## Terraform
 
 Terraform is an Infrastructure as Code (IaC) tool that allows for the automated and declarative provisioning and management of infrastructure resources. [Terraform](https://www.terraform.io/)
 
-# Google Cloud Platform
+## Google Cloud Platform
 
 The Google Cloud Platform (GCP) is a cloud computing services platform from Google, which includes storage, data processing, machine learning, analytics, and various other resources to facilitate the development, deployment, and scalability of applications. [Google Cloud Platform](https://cloud.google.com/gcp)
 
@@ -20,7 +22,7 @@ The Google Cloud Platform (GCP) is a cloud computing services platform from Goog
 * A Google Cloud Platform project. All you need is a @gmail account and a credit card (Is totally charge safe, different other cloud cloud providers, you won’t be charged until you upgrade). [Try Google Cloud Platform for free](https://cloud.google.com/free)
 * A GCP service account key with the necessary permissions to create GCP resources. You can create a service account key from the GCP Console. https://cloud.google.com/iam/docs/service-accounts-create
 
-# Pritunl VPN on GCP by Terraform
+## Pritunl VPN on GCP by Terraform
 
 The following Terraform code deploys a Pritunl VPN server on the Google Cloud Platform (GCP).
 
