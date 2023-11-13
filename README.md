@@ -61,7 +61,7 @@ The following Terraform code deploys a Pritunl VPN server on the Google Cloud Pl
   server_name      = "<server-name>"
   ```
 
-Note that the `variables.tf` file contains the list of variables used by above .tfvars configuration file.
+4. Note that the `variables.tf` file contains the list of variables used by above .tfvars configuration file.
 
 - `credentials`: The path to your GCP service account json key file;
 - `project_id`: Your GCP project ID;
@@ -71,19 +71,17 @@ Note that the `variables.tf` file contains the list of variables used by above .
 - `instance_type`: The intance size;
 - `server_name`: Server name (GCP console and OS hostname).
 
-4. Initialize the Terraform:
+5. Initialize the Terraform:
   ```
   terraform init
   ```
 
-5. Apply the Terraform:
+6. Apply the Terraform:
   ```
   terraform apply
   ```
 
-6. Pritunl setup:
-
-After resources creation, the output will show the public IP to access the Pritunl web interface, so access the Pritunl web interface and follow this instructions to the basic and secure configuration.
+7. Pritunl setup: After resources creation, the output will show the public IP to access the Pritunl web interface, so access the Pritunl web interface and follow this instructions to the basic and secure configuration.
 
 * [Pritunl VPN database setup](https://docs.pritunl.com/docs/configuration-5#database-setup)
 * [Initial Setup](https://docs.pritunl.com/docs/configuration-5#initial-setup)
