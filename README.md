@@ -52,7 +52,7 @@ The following Terraform code deploys a Pritunl VPN server on the Google Cloud Pl
 
 3. Variables: 
 
-Create a `terraform.tfvars` file and set the variables values:
+Rename the `terraform.tfvars.txt` to `terraform.tfvars`, fill the variables values and save it:
   ```
   credentials_path = "<path-to-service-account-key>"
   project_id       = "<your-gcp-project-id>"
@@ -60,16 +60,18 @@ Create a `terraform.tfvars` file and set the variables values:
   zone             = "<gcp-zone>"
   server_port      = "<server-port>"
   instance_type    = "<instance-type>"
+  server_name      = "<server-name>"
   ```
 
-Note that the `variables.tf` file contains the list of variables used .tfvars configuration file:
+Note that the `variables.tf` file contains the list of variables used by .tfvars configuration file.
 
-- `credentials`: The path to your GCP service account key file. Should be Like "../../credentials/my-service-account.json"
-- `project_id`: Your GCP project ID.
-- `region`: The GCP region where the resources will be created.
-- `zone`: The GCP zone where the resources will be created.
-- `server_port`: Server port through which VPN clients will be connected.
-- `instance_type`: The intance size. See [Machine families resource and comparison guide](https://cloud.google.com/compute/docs/machine-resource)
+- `credentials`: The path to your GCP service account json key file;
+- `project_id`: Your GCP project ID;
+- `region`: The GCP region where the resources will be created;
+- `zone`: The GCP zone where the resources will be created;
+- `server_port`: Server port through which VPN clients will be connected;
+- `instance_type`: The intance size;
+- `server_name`: Server name (GCP console and OS hostname).
 
 4. Initialize the Terraform:
   ```

@@ -1,3 +1,3 @@
-resource "google_project_service" "project_iap" {
+resource "google_project_service" "iap" {
   service = "iap.googleapis.com"
 }

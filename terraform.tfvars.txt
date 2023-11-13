@@ -1,0 +1,7 @@
+project_id       = "..." // https://cloud.google.com/resource-manager/docs/creating-managing-projects
+region           = "..." // https://cloud.google.com/compute/docs/regions-zones
+zone             = "..." // https://cloud.google.com/compute/docs/regions-zones
+credentials_path = "..." // Example: "../../my-service-account.json" See https://cloud.google.com/iam/docs/service-accounts-create
+server_port      = "..." // For example the standard OpenVPN port "1194"
+instance_type    = "..." // https://cloud.google.com/compute/docs/machine-resource
+server_name      = "..." // Example: "my-vpn-server"

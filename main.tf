@@ -15,7 +15,7 @@ module "vpn_server" {
   server_name   = var.server_name
   network_name  = module.vpc_network.network_name
   instance_type = var.instance_type
-  
+
 }
 
 module "iap" {
