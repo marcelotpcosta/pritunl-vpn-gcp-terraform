@@ -61,7 +61,7 @@ The following Terraform code deploys a Pritunl VPN server on the Google Cloud Pl
   server_name      = "<server-name>"
   ```
 
-Note that the `variables.tf` file contains the list of variables used by .tfvars configuration file.
+Note that the `variables.tf` file contains the list of variables used by above .tfvars configuration file.
 
 - `credentials`: The path to your GCP service account json key file;
 - `project_id`: Your GCP project ID;
