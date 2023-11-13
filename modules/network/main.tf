@@ -33,3 +33,4 @@ resource "google_compute_firewall" "iap-rule" {
     target_tags   = ["vpn-server"]
     source_ranges = ["35.235.240.0/20"] // IAP Range > https://cloud.google.com/iap/docs/using-tcp-forwarding
   }
+  

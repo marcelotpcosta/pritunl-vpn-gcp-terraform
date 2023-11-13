@@ -92,4 +92,3 @@ After resources creation, the output will show the public IP to access the Pritu
 * [Creating Organization and User](https://docs.pritunl.com/docs/connecting#creating-organization-and-user)
 * [Creating Server](https://docs.pritunl.com/docs/connecting#creating-server)
 * [Downloading User Profile](https://docs.pritunl.com/docs/connecting#downloading-user-profile)
-
