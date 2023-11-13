@@ -8,7 +8,7 @@ resource "google_compute_instance" "vpn-server" {
 
   boot_disk {
     initialize_params {
-      image = "ubuntu-os-cloud/ubuntu-2204-lts"
+      image = "ubuntu-os-cloud/ubuntu-2204-lts" // https://cloud.google.com/compute/docs/images/os-details
       type = "pd-standard"
     }
   }

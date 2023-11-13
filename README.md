@@ -1,6 +1,6 @@
 # Introduction
 
-The following guide instrutcs you to use code in that repo to deploy a Pritunl VPN server on the Google Cloud Platform (GCP) using Terraform. Also, we will leverage the Identity-Aware Proxy to provide secure SSH access to the VM instance.
+ThisREADME instrutcs to use code in that repo to deploy a Pritunl VPN server on the Google Cloud Platform (GCP) using Terraform. Also, we will leverage the Identity-Aware Proxy to provide secure SSH access to the VM instance, a final step to configure Pritunl VPN server.
 
 ## Client-site VPN
 
@@ -85,6 +85,11 @@ Note that the `variables.tf` file contains the list of variables used by .tfvars
 
 6. Pritunl setup:
 
-After resources creation, the output will show the public IP to access the Pritunl web interface, so access and follow the
+After resources creation, the output will show the public IP to access the Pritunl web interface, so access the Pritunl web interface and follow this instructions to the basic and secure configuration.
 
-When resources are created sucessfully, the output will show the URL to access the Pritunl web interface, plus with the username and password. So access the web interface and configure the VPN server based on [Pritunl VPN](https://pritunl.com/) documentation.
+* [Pritunl VPN database setup](https://docs.pritunl.com/docs/configuration-5#database-setup)
+* [Initial Setup](https://docs.pritunl.com/docs/configuration-5#initial-setup)
+* [Creating Organization and User](https://docs.pritunl.com/docs/connecting#creating-organization-and-user)
+* [Creating Server](https://docs.pritunl.com/docs/connecting#creating-server)
+* [Downloading User Profile](https://docs.pritunl.com/docs/connecting#downloading-user-profile)
+
