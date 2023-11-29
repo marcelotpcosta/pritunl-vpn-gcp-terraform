@@ -80,6 +80,8 @@ The following Terraform code deploys a Pritunl VPN server on the Google Cloud Pl
 
 8. Pritunl setup: After resources creation, the output will show the public IP to access the Pritunl web interface, so access the Pritunl web interface and follow this instructions to the basic and secure configuration.
 
+- Important: In order to perform the upcoming procedures, it is essential to connect to the server via SSH. As we utilize IAP (Identity-Aware Proxy), accessing SSH is conveniently achieved through the GCP console. Simply navigate to the console, choose the relevant project, go to the compute engine section, select your virtual machine (VM), and then click on the SSH access button. Please note that being a ***project owner*** is a prerequisite for this process.
+
 * [Pritunl VPN database setup](https://docs.pritunl.com/docs/configuration-5#database-setup)
 * [Initial Setup](https://docs.pritunl.com/docs/configuration-5#initial-setup)
 * [Creating Organization and User](https://docs.pritunl.com/docs/connecting#creating-organization-and-user)
