@@ -67,12 +67,18 @@ The following Terraform code deploys a Pritunl VPN server on the Google Cloud Pl
   terraform init
   ```
 
-6. Apply the Terraform:
+6. Validate terraform coinfiguration
+
+  ```
+  terrafoirm validate
+  ```
+
+7. Apply the Terraform:
   ```
   terraform apply
   ```
 
-7. Pritunl setup: After resources creation, the output will show the public IP to access the Pritunl web interface, so access the Pritunl web interface and follow this instructions to the basic and secure configuration.
+8. Pritunl setup: After resources creation, the output will show the public IP to access the Pritunl web interface, so access the Pritunl web interface and follow this instructions to the basic and secure configuration.
 
 * [Pritunl VPN database setup](https://docs.pritunl.com/docs/configuration-5#database-setup)
 * [Initial Setup](https://docs.pritunl.com/docs/configuration-5#initial-setup)
