@@ -30,7 +30,7 @@ With TCP forwarding, IAP can protect SSH and RDP access to your VMs hosted on Go
 
 * A Google Cloud Platform (GCP) project. For that all you need is a @gmail account and a credit card (Is totally charge safe, different other cloud cloud providers, you won’t be charged until you upgrade/remove lock). You can use this link to claim $300 in free credits, [Try Google Cloud Platform for free](https://cloud.google.com/free). Also I recommend read [Creating and managing projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects).
 
-* A GCP service account key with the necessary permissions to create GCP resources. You can create a service account key from the GCP Console. [Create a GCP service account](https://cloud.google.com/iam/docs/service-accounts-create). **NOTE: Save the SA Json file outside the project directory to prevent accidental commits.**
+* A GCP service account key with the ***project editor*** permissions to create GCP resources. You can create a service account key from the GCP Console. [Create a GCP service account](https://cloud.google.com/iam/docs/service-accounts-create). **NOTE: Save the SA Json file outside the project directory to prevent accidental commits.**
 
 # Note:
 
