@@ -67,10 +67,10 @@ The following Terraform code deploys a Pritunl VPN server on the Google Cloud Pl
   terraform init
   ```
 
-6. Validate terraform coinfiguration
+6. Validate terraform configuration
 
   ```
-  terrafoirm validate
+  terraform validate
   ```
 
 7. Apply the Terraform:
