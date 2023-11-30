@@ -1,4 +1,4 @@
-project_id       = "my-veryfirst-project"
+project_id       = "my-vpn-project"
 region           = "europe-west1"
 zone             = "europe-west1-c"
 credentials_path = "~/my-service-account.json"
