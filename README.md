@@ -52,7 +52,13 @@ The following Terraform code deploys a Pritunl VPN server on the Google Cloud Pl
   cd terraform-pritunl-vpn
   ```
 
-3. Rename the `terraform.tfvars.example` to `terraform.tfvars`, fill the variables values and save it. Note that the `variables.tf` file contains the list of variables used by tfvars configuration file.
+3. Rename the `terraform.tfvars.example` to `terraform.tfvars`
+
+```
+  mv terraform.tfvars.example terraform.tfvars
+```
+
+Fill the values and save it. Note that the `variables.tf` file contains the list of variables used by tfvars configuration file.
 
 - `project_id`: Your GCP project ID. See [Creating and managing projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
 - `region`: The GCP region where the resources will be created. See [GCP regions and zones](https://cloud.google.com/compute/docs/regions-zones)
@@ -78,9 +84,9 @@ The following Terraform code deploys a Pritunl VPN server on the Google Cloud Pl
   terraform apply
   ```
 
-8. Pritunl setup: After resources creation, the output will show the public IP to access the Pritunl web interface, so access the Pritunl web interface and follow this instructions to the basic and secure configuration.
+8. ***Pritunl setup:*** After resources creation, the output will show the public IP to access the Pritunl web interface, so access the Pritunl web interface and follow this instructions to the basic and secure configuration.
 
-- Important: In order to perform the upcoming procedures, it is essential to connect to the server via SSH. As we utilize IAP (Identity-Aware Proxy), accessing SSH is conveniently achieved through the GCP console. Simply navigate to the console, choose the relevant project, go to the compute engine section, select your virtual machine (VM), and then click on the SSH access button. Please note that being a ***project owner*** is a prerequisite for this process.
+***- Important:*** In order to perform the upcoming procedures, it is essential to connect to the server via SSH. As we utilize IAP (Identity-Aware Proxy), accessing SSH is conveniently achieved through the GCP console. Simply navigate to the console, choose the relevant project, go to the compute engine section, select your virtual machine (VM), and then click on the SSH access button. Please note that being a ***project owner*** is a prerequisite for this process.
 
 * [Pritunl VPN database setup](https://docs.pritunl.com/docs/configuration-5#database-setup)
 * [Initial Setup](https://docs.pritunl.com/docs/configuration-5#initial-setup)
