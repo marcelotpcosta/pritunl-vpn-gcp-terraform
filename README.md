@@ -53,10 +53,9 @@ The following Terraform code deploys a Pritunl VPN server on the Google Cloud Pl
   ```
 
 3. Rename the `terraform.tfvars.example` to `terraform.tfvars`
-
-```
+  ```
   mv terraform.tfvars.example terraform.tfvars
-```
+  ```
 
 Fill the values and save it. Note that the `variables.tf` file contains the list of variables used by tfvars configuration file.
 
