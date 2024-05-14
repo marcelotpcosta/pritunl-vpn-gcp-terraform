@@ -67,25 +67,16 @@ Fill the values and save it. Note that the `variables.tf` file contains the list
 - `instance_type`: The intance size. See [GCP machine types](https://cloud.google.com/compute/docs/machine-resource)
 - `server_name`: The server name on GCP console and OS hostname, for example "my-vpn-server"
 
-5. Initialize the Terraform:
-  ```
-  terraform init
-  ```
+4. Then perform the following commands on the root folder:
 
-6. Validate terraform configuration
+- `terraform init` to get the plugins
+- `terraform plan` to see the infrastructure plan
+- `terraform apply` to apply the infrastructure build
+- `terraform destroy` to destroy the built infrastructure
 
-  ```
-  terraform validate
-  ```
+5. ***Pritunl setup:*** After resources creation, the output will show the public IP to access the Pritunl web interface, so access the Pritunl web interface and follow this instructions to the basic and secure configuration.
 
-7. Apply the Terraform:
-  ```
-  terraform apply
-  ```
-
-8. ***Pritunl setup:*** After resources creation, the output will show the public IP to access the Pritunl web interface, so access the Pritunl web interface and follow this instructions to the basic and secure configuration.
-
-***- Important:*** In order to perform the upcoming procedures, it is essential to connect to the server via SSH. As we utilize IAP (Identity-Aware Proxy), accessing SSH is conveniently achieved through the GCP console. Simply navigate to the console, choose the relevant project, go to the compute engine section, select your virtual machine (VM), and then click on the SSH access button. Please note that being a ***project owner*** is a prerequisite for this process.
+***- Important:*** In order to perform the upcoming procedures, it is essential to connect to the server via SSH. As we utilize IAP (Identity-Aware Proxy), accessing SSH is conveniently achieved through the GCP console. Simply navigate to the console, choose the project, go to the compute engine section, select your virtual machine (VM), and then click on the SSH access button. Please note that being a ***project owner*** is a prerequisite for this process.
 
 * [Pritunl VPN database setup](https://docs.pritunl.com/docs/configuration-5#database-setup)
 * [Initial Setup](https://docs.pritunl.com/docs/configuration-5#initial-setup)
