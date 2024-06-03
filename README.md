@@ -1,6 +1,6 @@
 # Introduction
 
-This repo includes terraform code to deploy a Pritunl VPN server instance on Google Cloud Platform (GCP). Also, we will leverage the Identity-Aware Proxy to provide secure SSH access to the VM instance, needed to a final step to configure Pritunl VPN server.
+This repo includes terraform code to deploy a Pritunl VPN server instance on Google Cloud Platform (GCP). Also, we will leverage the Identity-Aware Proxy to provide secure SSH access to the VM instance, needed to a final step to configure your Pritunl VPN server.
 
 # Definitions
 
@@ -48,12 +48,12 @@ The following Terraform code deploys a Pritunl VPN server on the Google Cloud Pl
   cd pritunl-vpn-gcp-terraform
   ```
 
-3. Rename the `terraform.tfvars.example` to `terraform.tfvars`
+3. Make a copy of the `terraform.tfvars.example` to `terraform.tfvars`
   ```
-  mv terraform.tfvars.example terraform.tfvars
+  cp terraform.tfvars.example terraform.tfvars
   ```
 
-Fill the values and save it. Note that the `variables.tf` file contains the list of variables used by tfvars configuration file.
+4. Fill the values and save it. Note that the `variables.tf` file contains the list of variables used by tfvars configuration file.
 
 - `project_id`: Your GCP project ID. See [Creating and managing projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
 - `region`: The GCP region where the resources will be created. See [GCP regions and zones](https://cloud.google.com/compute/docs/regions-zones)
@@ -62,25 +62,25 @@ Fill the values and save it. Note that the `variables.tf` file contains the list
 - `instance_type`: The intance size. See [GCP machine types](https://cloud.google.com/compute/docs/machine-resource)
 - `server_name`: The server name on GCP console and OS hostname, for example "my-vpn-server"
 
-4. Authenticate on GCP (Assuming you have installed and configured gcloud)
+5. Authenticate on GCP (Assuming you have already installed and configured gcloud)
 
 - `gcloud auth application-default login` and follow link
 
-5. Then perform the following commands on the root folder:
+6. Then perform the following commands on the root folder:
 
 - `terraform init` to get the plugins
 - `terraform plan` to see the infrastructure plan
 - `terraform apply` to apply the infrastructure build
 
-6. When necessary
+7. When necessary
 - `terraform destroy` to destroy the built infrastructure
 
-7. ***Pritunl setup:*** After resources creation, the output will show the public IP to access the Pritunl web interface, so access the Pritunl web interface and follow this instructions to the basic and secure configuration. The page may take take a while to load.
+8. ***Pritunl setup:*** After resources creation, the output will show the public IP to access the Pritunl web interface, so access the Pritunl web interface and follow this instructions to the basic and secure configuration. The page may take take a while to load.
 
 ***- Important:*** In order to perform the upcoming procedures, it is essential to connect to the server via SSH. As we utilize IAP (Identity-Aware Proxy), accessing SSH is conveniently achieved through the GCP console. Simply navigate to the console, choose the project, go to the compute engine section, select your virtual machine (VM), and then click on the SSH access button. Please note that being a ***project owner*** is a prerequisite for this process.
 
-1. [Pritunl VPN database setup](https://docs.pritunl.com/docs/configuration-5#database-setup)
-2. [Initial Setup](https://docs.pritunl.com/docs/configuration-5#initial-setup)
-3. [Creating Organization and User](https://docs.pritunl.com/docs/connecting#creating-organization-and-user)
-4. [Creating Server](https://docs.pritunl.com/docs/connecting#creating-server)
-5. [Downloading User Profile](https://docs.pritunl.com/docs/connecting#downloading-user-profile)
+9. [Pritunl VPN database setup](https://docs.pritunl.com/docs/configuration-5#database-setup)
+10. [Initial Setup](https://docs.pritunl.com/docs/configuration-5#initial-setup)
+11. [Creating Organization and User](https://docs.pritunl.com/docs/connecting#creating-organization-and-user)
+12. [Creating Server](https://docs.pritunl.com/docs/connecting#creating-server)
+13. [Downloading User Profile](https://docs.pritunl.com/docs/connecting#downloading-user-profile)
