@@ -53,7 +53,7 @@ The following Terraform code deploys a Pritunl VPN server on the Google Cloud Pl
   cp terraform.tfvars.example terraform.tfvars
   ```
 
-4. Fill the values and save it. Note that the `variables.tf` file contains the list of variables used by tfvars configuration file.
+4. Fill the values and save it. Note that the `variables.tf` file contains the declaration of variables used by tfvars configuration file.
 
 - `project_id`: Your GCP project ID. See [Creating and managing projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects)
 - `region`: The GCP region where the resources will be created. See [GCP regions and zones](https://cloud.google.com/compute/docs/regions-zones)
