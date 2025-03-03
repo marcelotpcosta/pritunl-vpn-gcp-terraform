@@ -1,7 +1,5 @@
 project_id       = "possible-post-413117"
+credentials_path = "~/my-service-account.json"
 region           = "europe-west1"
 zone             = "europe-west1-c"
-# credentials_path = "~/my-service-account.json"
-server_port      = "1194"
-instance_type    = "e2-micro"
 server_name      = "vpn-server"
