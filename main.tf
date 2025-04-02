@@ -3,7 +3,7 @@ resource "google_project_service" "iap" {
   service = "iap.googleapis.com"
 }
 
-# Intance
+# Instance
 resource "google_compute_instance" "vpn-server" {
   name                    = var.server_name
   machine_type            = var.instance_type
@@ -20,15 +20,23 @@ resource "google_compute_instance" "vpn-server" {
   }
 
   network_interface {
-    network = var.network_name
+    network = google_compute_network.network.name
     access_config {}
   }
 }
 
 # Network
-resource "google_compute_network" "vpc_network" {
-  name                    = "vpn-vpc"
-  auto_create_subnetworks = true
+resource "google_compute_network" "network" {
+  name                    = var.network_name
+  auto_create_subnetworks = false
+}
+
+# Subnetwork
+resource "google_compute_subnetwork" "subnetwork" {
+  name          = var.subnetwork_name
+  ip_cidr_range = "10.128.0.0/24"
+  region        = var.region
+  network       = google_compute_network.network.id
 }
 
 # Firewall

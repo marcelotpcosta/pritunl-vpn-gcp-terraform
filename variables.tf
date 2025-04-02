@@ -4,6 +4,12 @@ variable "network_name" {
   default     = "vpn-vpc"
 }
 
+variable "subnetwork_name" {
+  description = "VPC subnetwork name"
+  type        = string
+  default     = "vpn-subnetwork"
+}
+
 variable "instance_type" {
   description = "The instance type"
   type        = string
